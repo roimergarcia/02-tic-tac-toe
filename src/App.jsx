@@ -4,6 +4,7 @@ import { Square } from './components/Square';
 import { TURNS } from './constants';
 import { checkWinnerFrom, checkEndGame } from './logic/board';
 import { WinnerModal } from './components/WinnerModal';  
+import { Game } from './components/Game';  
 
 function App() {  
   const [board, setBoard] = useState(Array(9).fill(null))
@@ -48,20 +49,7 @@ function App() {
       <h1>Tic Tac Toe</h1>
       <button onClick={resetGame}>Reset del juego</button>
 
-      <section className="game">
-        {
-          board.map( (_, index) => {
-            return (
-              <Square 
-                key={index}
-                index={index}
-                updateBoard={updateBoard}>
-                  {board[index]}
-              </Square>
-            )
-          })
-        }
-      </section>
+      <Game board={board} updateBoard={updateBoard} />
 
         <section className="turn">
           <Square  isSelected={turn === TURNS.X}>
