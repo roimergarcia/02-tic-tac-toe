@@ -1,10 +1,15 @@
 
-//Enumeración de turnos 
+/**
+ * List the two possible play characters
+ */
 export const TURNS = {
-    X: 'x',
-    O: 'o'
+    X: '×', 
+    O: '○' 
 }
-   
+
+/**
+* Enumerate all possible winning combinations
+*/
 export const WINNER_COMBOS = [
     [0, 1, 2],
     [3, 4, 5],
